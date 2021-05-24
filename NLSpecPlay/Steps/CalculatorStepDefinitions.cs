@@ -1,4 +1,5 @@
 ﻿using TechTalk.SpecFlow;
+using FluentAssertions;
 
 namespace NLSpecPlay.Steps
 {
@@ -7,6 +8,9 @@ namespace NLSpecPlay.Steps
     {
 
         // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
+        private int firstNum { get; set; }
+        private int secondNum { get; set; }
+        private int sum { get; set; }
 
         private readonly ScenarioContext _scenarioContext;
 
@@ -22,9 +26,8 @@ namespace NLSpecPlay.Steps
             // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata
             // To use the multiline text or the table argument of the scenario,
             // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            _scenarioContext.Pending();
+            // method.
+            firstNum = number;
         }
 
         [Given("the second number is (.*)")]
@@ -34,17 +37,15 @@ namespace NLSpecPlay.Steps
             // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata
             // To use the multiline text or the table argument of the scenario,
             // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            _scenarioContext.Pending();
+            // method.
+            secondNum = number;
         }
 
         [When("the two numbers are added")]
         public void WhenTheTwoNumbersAreAdded()
         {
             //TODO: implement act (action) logic
-
-            _scenarioContext.Pending();
+            sum = firstNum + secondNum;
         }
 
         [Then("the result should be (.*)")]
@@ -52,7 +53,8 @@ namespace NLSpecPlay.Steps
         {
             //TODO: implement assert (verification) logic
 
-            _scenarioContext.Pending();
+            _scenarioContext.Clear();
+            sum.Should().Be(result);
         }
     }
 }
