@@ -85,7 +85,6 @@ namespace NLSpecPlay.PageObjects
                 () => ResultElement.GetAttribute("value"),
                 result => result == string.Empty);
         }
-
         /// <summary>
         /// Helper method to wait until the expected result is available on the UI
         /// </summary>
@@ -93,6 +92,7 @@ namespace NLSpecPlay.PageObjects
         /// <param name="getResult">The function to poll the result from the UI</param>
         /// <param name="isResultAccepted">The function to decide if the polled result is accepted</param>
         /// <returns>An accepted result returned from the UI. If the UI does not return an accepted result within the timeout an exception is thrown.</returns>
+ 
         private T WaitUntil<T>(Func<T> getResult, Func<T, bool> isResultAccepted) where T: class
         {
             var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(DefaultWaitInSeconds));

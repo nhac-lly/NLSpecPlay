@@ -38,7 +38,7 @@ namespace NLSpecPlay.Drivers
         private IWebDriver CreateWebDriver()
         {
             _driver = Environment.GetEnvironmentVariable("Browser");
-            if (_driver != "Chrome")
+            if (_driver == "Firefox")
                 return CreateFirefoxDriver();
             else
                 return CreateChromeDriver();
