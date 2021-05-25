@@ -1,60 +1,49 @@
-﻿using TechTalk.SpecFlow;
+﻿using NLSpecPlay.Drivers;
+using NLSpecPlay.PageObjects;
 using FluentAssertions;
+using TechTalk.SpecFlow;
 
 namespace NLSpecPlay.Steps
 {
     [Binding]
     public sealed class CalculatorStepDefinitions
     {
+        //Page Object for Calculator
+        private readonly CalculatorPageObject _calculatorPageObject;
 
-        // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
-        private int firstNum { get; set; }
-        private int secondNum { get; set; }
-        private int sum { get; set; }
-
-        private readonly ScenarioContext _scenarioContext;
-
-        public CalculatorStepDefinitions(ScenarioContext scenarioContext)
+        public CalculatorStepDefinitions(BrowserDriver browserDriver)
         {
-            _scenarioContext = scenarioContext;
+            _calculatorPageObject = new CalculatorPageObject(browserDriver.Current);
         }
 
         [Given("the first number is (.*)")]
         public void GivenTheFirstNumberIs(int number)
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method.
-            firstNum = number;
+            //delegate to Page Object
+            _calculatorPageObject.EnterFirstNumber(number.ToString());
         }
 
         [Given("the second number is (.*)")]
         public void GivenTheSecondNumberIs(int number)
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method.
-            secondNum = number;
+            //delegate to Page Object
+            _calculatorPageObject.EnterSecondNumber(number.ToString());
         }
 
         [When("the two numbers are added")]
         public void WhenTheTwoNumbersAreAdded()
         {
-            //TODO: implement act (action) logic
-            sum = firstNum + secondNum;
+            //delegate to Page Object
+            _calculatorPageObject.ClickAdd();
         }
 
         [Then("the result should be (.*)")]
-        public void ThenTheResultShouldBe(int result)
+        public void ThenTheResultShouldBe(int expectedResult)
         {
-            //TODO: implement assert (verification) logic
+            //delegate to Page Object
+            var actualResult = _calculatorPageObject.WaitForNonEmptyResult();
 
-            _scenarioContext.Clear();
-            sum.Should().Be(result);
+            actualResult.Should().Be(expectedResult.ToString());
         }
     }
 }

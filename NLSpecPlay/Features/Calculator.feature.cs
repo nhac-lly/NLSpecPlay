@@ -27,7 +27,8 @@ namespace NLSpecPlay.Features
         
         private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
-        private string[] _featureTags = ((string[])(null));
+        private string[] _featureTags = new string[] {
+                "Calculator"};
         
 #line 1 "Calculator.feature"
 #line hidden
@@ -52,7 +53,8 @@ namespace NLSpecPlay.Features
 Simple calculator for adding **two** numbers
 
 Link to a feature: [Calculator](NLSpecPlay/Features/Calculator.feature)
-***Further read***: **[Learn more about how to generate Living Documentation](https://docs.specflow.org/projects/specflow-livingdoc/en/latest/LivingDocGenerator/Generating-Documentation.html)**", ProgrammingLanguage.CSharp, ((string[])(null)));
+***Further read***: **[Learn more about how to generate Living Documentation](https://docs.specflow.org/projects/specflow-livingdoc/en/latest/LivingDocGenerator/Generating-Documentation.html)**", ProgrammingLanguage.CSharp, new string[] {
+                        "Calculator"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -98,11 +100,10 @@ Link to a feature: [Calculator](NLSpecPlay/Features/Calculator.feature)
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add two numbers")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Calculator")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Calculator")]
         public virtual void AddTwoNumbers()
         {
-            string[] tagsOfScenario = new string[] {
-                    "mytag"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
@@ -149,7 +150,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Second number", secondNumber);
             argumentsOfScenario.Add("Expected result", expectedResult);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers permutations", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 15
+#line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -169,16 +170,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 16
+#line 17
  testRunner.Given(string.Format("the first number is {0}", firstNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 17
+#line 18
  testRunner.And(string.Format("the second number is {0}", secondNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 18
+#line 19
  testRunner.When("the two numbers are added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
+#line 20
  testRunner.Then(string.Format("the result should be {0}", expectedResult), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -188,42 +189,45 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add two numbers permutations: 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Calculator")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Calculator")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:First number", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Second number", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected result", "0")]
         public virtual void AddTwoNumbersPermutations_0()
         {
-#line 15
+#line 16
 this.AddTwoNumbersPermutations("0", "0", "0", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add two numbers permutations: -10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add two numbers permutations: -1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Calculator")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "-10")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:First number", "-10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Calculator")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "-1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:First number", "-1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Second number", "10")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected result", "9")]
-        public virtual void AddTwoNumbersPermutations_10()
+        public virtual void AddTwoNumbersPermutations_1()
         {
-#line 15
-this.AddTwoNumbersPermutations("-10", "10", "9", ((string[])(null)));
+#line 16
+this.AddTwoNumbersPermutations("-1", "10", "9", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add two numbers permutations: 6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Calculator")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Calculator")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:First number", "6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Second number", "9")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected result", "hi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected result", "15")]
         public virtual void AddTwoNumbersPermutations_6()
         {
-#line 15
-this.AddTwoNumbersPermutations("6", "9", "hi", ((string[])(null)));
+#line 16
+this.AddTwoNumbersPermutations("6", "9", "15", ((string[])(null)));
 #line hidden
         }
     }
