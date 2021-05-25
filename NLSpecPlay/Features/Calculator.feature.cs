@@ -50,7 +50,7 @@ namespace NLSpecPlay.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Calculator", @"![Calculator](https://specflow.org/wp-content/uploads/2020/09/calculator.png)
-Simple calculator for adding **two** numbers
+Simple calculator for adding **two** numbers on Chrome
 
 Link to a feature: [Calculator](NLSpecPlay/Features/Calculator.feature)
 ***Further read***: **[Learn more about how to generate Living Documentation](https://docs.specflow.org/projects/specflow-livingdoc/en/latest/LivingDocGenerator/Generating-Documentation.html)**", ProgrammingLanguage.CSharp, new string[] {
@@ -150,7 +150,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Second number", secondNumber);
             argumentsOfScenario.Add("Expected result", expectedResult);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers permutations", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 16
+#line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -170,16 +170,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 17
+#line 16
  testRunner.Given(string.Format("the first number is {0}", firstNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 18
+#line 17
  testRunner.And(string.Format("the second number is {0}", secondNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 19
+#line 18
  testRunner.When("the two numbers are added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 20
+#line 19
  testRunner.Then(string.Format("the result should be {0}", expectedResult), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -196,7 +196,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected result", "0")]
         public virtual void AddTwoNumbersPermutations_0()
         {
-#line 16
+#line 15
 this.AddTwoNumbersPermutations("0", "0", "0", ((string[])(null)));
 #line hidden
         }
@@ -211,7 +211,7 @@ this.AddTwoNumbersPermutations("0", "0", "0", ((string[])(null)));
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected result", "9")]
         public virtual void AddTwoNumbersPermutations_1()
         {
-#line 16
+#line 15
 this.AddTwoNumbersPermutations("-1", "10", "9", ((string[])(null)));
 #line hidden
         }
@@ -226,7 +226,7 @@ this.AddTwoNumbersPermutations("-1", "10", "9", ((string[])(null)));
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected result", "15")]
         public virtual void AddTwoNumbersPermutations_6()
         {
-#line 16
+#line 15
 this.AddTwoNumbersPermutations("6", "9", "15", ((string[])(null)));
 #line hidden
         }

@@ -1,5 +1,6 @@
 ﻿using BoDi;
 using NLSpecPlay.Drivers;
+using System;
 using TechTalk.SpecFlow;
 
 namespace NLSpecPlay.Hooks
@@ -16,6 +17,11 @@ namespace NLSpecPlay.Hooks
     [Binding]
     public class SharedBrowserHooks
     {
+        [BeforeFeature]
+        public static void BrowserSelector(FeatureContext featureContext)
+        {
+            Environment.SetEnvironmentVariable("Browser", !featureContext.FeatureInfo.Description.Contains("Chrome") ? "Firefox" : "Chrome");
+        }
         [BeforeTestRun]
         public static void BeforeTestRun(ObjectContainer testThreadContainer)
         {

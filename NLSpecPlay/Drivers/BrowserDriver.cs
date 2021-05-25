@@ -1,6 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 
@@ -13,10 +14,16 @@ namespace NLSpecPlay.Drivers
     {
         private readonly Lazy<IWebDriver> _currentWebDriverLazy;
         private bool _isDisposed;
+        public string _driver { get; set; }
 
         public BrowserDriver()
         {
             _currentWebDriverLazy = new Lazy<IWebDriver>(CreateWebDriver);
+        }
+
+        public void SetDriver(string name)
+        {
+            _driver = name;
         }
 
         /// <summary>
@@ -30,13 +37,24 @@ namespace NLSpecPlay.Drivers
         /// <returns></returns>
         private IWebDriver CreateWebDriver()
         {
-            //We use the Chrome browser
-            //var chromeDriverService = ChromeDriverService.CreateDefaultService();
-            //var chromeOptions = new ChromeOptions();
-            new DriverManager().SetUpDriver(new ChromeConfig());
-            //var chromeDriver = new ChromeDriver(chromeDriverService, chromeOptions);
-            var chromeDriver = new ChromeDriver();
+            _driver = Environment.GetEnvironmentVariable("Browser");
+            if (_driver != "Chrome")
+                return CreateFirefoxDriver();
+            else
+                return CreateChromeDriver();
+        }
 
+        private IWebDriver CreateFirefoxDriver()
+        {
+            new DriverManager().SetUpDriver(new FirefoxConfig());
+            var firefoxDriver = new FirefoxDriver();
+            return firefoxDriver;
+        }
+
+        private IWebDriver CreateChromeDriver()
+        {
+            new DriverManager().SetUpDriver(new ChromeConfig());
+            var chromeDriver = new ChromeDriver();
             return chromeDriver;
         }
 
